@@ -43,9 +43,9 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 255, 0, 0)),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Mon premier projet - Bahrini Moez'),
     );
   }
 }
@@ -82,6 +82,22 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
+  void decrementCounter() {
+    setState(() {
+      if (_counter > 0) {
+        _counter--;
+      }
+    });
+  }
+
+  void resetCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -124,10 +140,27 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: 'dec',
+            onPressed: decrementCounter,
+            child: const Icon(Icons.remove),
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
+            heroTag: 'reset',
+            onPressed: resetCounter,
+            child: const Icon(Icons.refresh),
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
+            heroTag: 'inc',
+            onPressed: _incrementCounter,
+            child: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }
