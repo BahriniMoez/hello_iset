@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 255, 0, 0)),
+        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 13, 0, 255)),
       ),
       home: const MyHomePage(title: 'Mon premier projet - Bahrini Moez'),
     );
@@ -132,11 +132,22 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
-            const Text('Moez Bahrini Premier projet, je clique cette button :'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const CircleAvatar(
+              radius: 50,
+              backgroundColor: Color.fromARGB(255, 0, 60, 226),
+              child: Icon(Icons.person, size: 50, color: Colors.white),
             ),
+            const SizedBox(height: 16),
+            const Text(
+              'Bahrini Moez',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            const Text('DSI'),
+            const SizedBox(height: 8),
+            const Text('bahrinimoez1@gmail.com'),
+            const SizedBox(height: 24),
+            Text('Compteur: $_counter'),
           ],
         ),
       ),
