@@ -1,6 +1,20 @@
+//palier 3 question 3 ( les roles des dossiers)
+/*
+lib: le dossier qui contient le code qui fait donctionner notre application.
+
+android : ce dossier contient les fichiers de configuration et le code natif de notre application pour executer sur les telephone android
+
+web : ce dossier contient les fichiers qui permet a notre application Flutter de fonctionner dans le navigateur 
+
+pubspec.yaml : c'est le fichier de configuration principal du projet, il gere les dépendances, les bibliothéques et les ressources de notre application
+
+*/
+
 import 'package:flutter/material.dart';
 
+// main c'est le point de debut du programme , il est la premiere fonction qui se lance au demarrage.
 void main() {
+  //runapp est la fonction qui affiche l'affiche l'application sur l'ecran
   runApp(const MyApp());
 }
 
@@ -10,6 +24,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    //materialApp est le conteneur principal de l'application, il definit le design de l'application comme le titre et le theme
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -57,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    //setState est une methode qui notifier le framework de changement pour declencher la reconstruction de l'interface graphique
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -69,12 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    
+    //scaffold contient la structure de base de page visuelle comme la bar et le body et les buttons flottants
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
